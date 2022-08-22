@@ -1,0 +1,268 @@
+main {
+  overflow: hidden;
+  position: relative;
+  .hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: url("../../assets/images/bg-intro-desktop.svg");
+    background-repeat: no-repeat;
+    background-position: 46rem -12rem;
+    background-size: 65%;
+    min-height: 75vh;
+    @include media-sm {
+      background-image: url("../../assets/images/bg-intro-mobile.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: 0px -2.8125rem;
+    }
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+      background-image: url("../../assets/images/bg-intro-mobile.svg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 0px -11.8125rem;
+    }
+    img {
+      position: absolute;
+      top: -10rem;
+      transform: scale(0.8);
+      right: -10rem;
+      @include media-sm {
+        position: relative;
+        max-width: 35em;
+        width: 100%;
+        top: -10rem;
+        z-index: 20;
+        right: 0rem;
+        transform: scale(1);
+        animation: translateY 3s linear infinite alternate-reverse;
+        @keyframes translateY {
+          0% {
+            transform: translateY(50);
+          }
+
+          100% {
+            transform: translateY(-50px);
+          }
+        }
+      }
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        position: relative;
+        max-width: 35em;
+        width: 100%;
+        top: -10rem;
+        z-index: 20;
+        left: 20%;
+        transform: scale(1);
+      }
+    }
+    .hero-text {
+      position: relative;
+      bottom: -9rem;
+      left: 10%;
+      max-width: 450px;
+      @include media-sm {
+        text-align: center;
+        position: relative;
+        bottom: 120px;
+        left: 0;
+        padding: 0 15px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        top: -10rem;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        color: $grayish-blue;
+      }
+      .theme-btn {
+        padding: 10px 30px;
+        @include media-sm {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+  .about-section {
+    background-color: $light-grayish-blue;
+    padding: 80px 50px;
+    .container {
+      .about-header {
+        @include media-sm {
+          text-align: center;
+        }
+        h1 {
+          font-size: 32px;
+          color: $dark-blue;
+        }
+        p {
+          color: $grayish-blue;
+          max-width: 670px;
+        }
+      }
+      .about-cards {
+        padding: 50px 10px;
+        .about-card {
+          padding-top: 40px;
+          display: flex;
+          flex-direction: column;
+          @include media-sm {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+          }
+          img {
+            width: 70px;
+          }
+          .text {
+            margin-top: 2.5rem;
+            h5 {
+              margin-bottom: 1.5rem;
+              color: $dark-blue;
+            }
+            p {
+              color: $grayish-blue;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .articles-section {
+    background-color: $very-light-gray;
+    padding: 80px 20px;
+    .title {
+      h1 {
+        font-size: 32px;
+        color: $dark-blue;
+        font-weight: 200;
+      }
+      @include media-md {
+        text-align: center;
+      }
+    }
+    .articles {
+      padding: 30px 10px 40px;
+      .article {
+        height: max-content;
+        padding: 0;
+        background-color: $white;
+        margin: 10px 5px;
+        max-width: 24%;
+        box-shadow: 2px -1px 13px 3px rgb(0 0 0 / 3%);
+        @include media-md {
+          max-width: 300px;
+        }
+        .img {
+          overflow: hidden;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+          img {
+            width: 100%;
+            min-height: 200px;
+            max-height: 200px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+        .text {
+          padding: 25px;
+          span {
+            font-size: 11px;
+            color: $grayish-blue;
+          }
+          a {
+            h5 {
+              color: $dark-blue;
+              padding-top: 8px;
+              font-size: 17px;
+              &:hover {
+                color: $lime-green;
+                transition: 0.3s;
+              }
+            }
+          }
+          p {
+            padding-top: 10px;
+            font-size: 14px;
+            color: $grayish-blue;
+          }
+        }
+        &:hover {
+          img {
+            transform: scale(1.1);
+            overflow: hidden;
+          }
+        }
+        @include media-xs {
+          max-width: 100%;
+        }
+      }
+      @include media-sm {
+        padding: 10px;
+      }
+      .row {
+        @include media-md {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 99999;
+  background-color: $dark-blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    &:first-child {
+      position: relative;
+      border: 5px solid $white;
+      height: 100px;
+      border-radius: 50%;
+      width: 100px;
+      background-color: $dark-blue;
+      animation: rotate 2s linear infinite;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -6px;
+        width: 10px;
+        height: 43px;
+        transform: translate(-1px, -10px) rotate(12deg);
+        background-color: $dark-blue;
+      }
+    }
+    &:last-child {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: $dark-blue;
+      border: 5px solid #2dba95;
+      animation: rotate 1s linear infinite reverse;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -6px;
+        width: 10px;
+        height: 43px;
+        transform: translate(-1px, -10px) rotate(12deg);
+        background-color: $dark-blue;
+      }
+    }
+  }
+}

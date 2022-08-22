@@ -1,0 +1,660 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@500&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Tajawal", sans-serif;
+}
+
+p,
+h1,
+h2,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+strong {
+    font-family: "Tajawal", sans-serif;
+}
+
+:root {
+    --blue: #0377fc !important;
+    --yellow: #fcdf03 !important;
+    --white: #fff !important;
+    --black: rgb(12, 8, 8) !important;
+}
+
+body {
+    background-color: rgba(246, 242, 242, 0.734) !important;
+    direction: rtl;
+}
+
+header {
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 2px 2px 4px 0px #00000024;
+}
+
+.navbar {
+    padding-top: 0rem !important;
+}
+
+.navbar a {
+    color: #000;
+}
+
+.navbar a:hover {
+    color: var(--blue);
+}
+
+.logo img {
+    width: 110px;
+    height: 110px;
+    margin: 10px 60px 0px 0px;
+}
+
+.logo h2 {
+    margin-top: 40px;
+    font-size: x-large;
+}
+
+.address {
+    display: block;
+    font-size: medium;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.404);
+}
+
+menu a {
+    text-decoration: none !important;
+    color: #000;
+    font-weight: bolder;
+}
+
+menu .active {
+    background-color: var(--blue);
+    border-radius: 6px;
+}
+
+menu .active a {
+    color: var(--white);
+}
+
+menu .active a:hover {
+    color: var(--white);
+}
+
+menu ul li {
+    list-style-type: none;
+    padding: 10px;
+}
+
+menu ul {
+    display: flex !important;
+    flex-direction: row;
+    margin: auto;
+}
+
+.prof a {
+    color: #000;
+    text-decoration: none;
+    width: fit-content;
+    background-color: var(--yellow);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.prof a:hover {
+    transition: 0.3s;
+    color: #000;
+    box-shadow: 0px 1px 5px 0px #00000078;
+}
+
+.prof i {
+    color: #000;
+    font-size: 1.3rem;
+}
+
+.menu-btn {
+    display: none;
+}
+
+.hero-img {
+    position: relative;
+}
+
+.hero-img img {
+    height: 489px;
+}
+
+.hero-img::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(
+        45deg,
+        var(--yellow),
+        var(--black),
+        var(--blue)
+    );
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+}
+
+.hero-title {
+    color: #fff;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.hero-title p span {
+    position: relative;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: var(--blue);
+    text-decoration-line: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 11px;
+}
+
+@media screen and (max-width: 750px) {
+    .hero-title {
+        font-size: 27px;
+    }
+}
+
+@media screen and (max-width: 1015px) {
+    .navbar menu {
+        display: none;
+    }
+    .navbar .prof {
+        display: none;
+    }
+    .logo img {
+        width: 85px;
+        height: 85px;
+        margin: 10px 5px 0px 0px;
+    }
+    .logo h2 {
+        margin-top: 35px;
+        font-size: 18px;
+    }
+    .menu-btn {
+        display: block;
+        cursor: pointer;
+        margin-left: 10px;
+        font-size: 25px;
+        padding-top: 17px;
+        color: #252222d7;
+    }
+}
+
+.sidebar-menu {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.882);
+    transition: all 0.4s;
+    z-index: 999;
+}
+
+.sidebar-menu.open {
+    left: 0;
+}
+
+.sidebar-menu .sidebar-links {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.sidebar-menu .sidebar-links li {
+    list-style-type: none;
+    padding: 12px 20px;
+    transition: all 0.5s ease-out;
+}
+
+.sidebar-menu .sidebar-links li:hover {
+    transform: translateX(-20px);
+}
+
+.sidebar-menu .sidebar-links li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.sidebar-menu .sidebar-links li a:hover {
+    color: var(--blue);
+}
+
+.sidebar-menu .sidebar-links .login:hover {
+    transition: none;
+    transform: translateX(0);
+}
+
+.sidebar-menu .sidebar-links .login a {
+    background-color: var(--yellow);
+    color: #000 !important;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 40px;
+}
+
+.social-icons a i {
+    padding-left: 10px;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.social-icons a .bxl-facebook-circle:hover {
+    color: #005dc7;
+}
+
+.social-icons a .bxl-instagram:hover {
+    color: #cc24db;
+}
+
+.social-icons a .bxl-twitter:hover {
+    color: #2492db;
+}
+
+.social-icons a .bxl-tiktok:hover {
+    color: #d9396c;
+}
+
+.sidebar-menu .close i {
+    position: absolute;
+    top: 38px;
+    left: 16px;
+}
+
+.sidebar-menu .close i {
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.tooltiptext {
+    color: #000;
+    position: absolute;
+    left: 6px;
+    top: 81px;
+    padding: 5px;
+    background-color: #00bcd4;
+    visibility: hidden;
+    border-radius: 3px;
+}
+
+.tooltiptext::before {
+    content: "";
+    position: absolute;
+    left: 11px;
+    width: 10px;
+    top: -9px;
+    border-top-right-radius: 50%;
+    height: 10px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #00bcd4;
+}
+
+.sidebar-menu .close:hover .tooltiptext {
+    visibility: visible;
+}
+
+/** 
+Footer Section
+**/
+
+.footer {
+    background-color: var(--white);
+}
+
+.footer .footer-logo {
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: -36px;
+}
+
+.footer .footer-logo .logo img {
+    width: 90px;
+    height: 90px;
+}
+
+.footer .footer-logo p {
+    visibility: hidden;
+}
+
+.footer .footer-links {
+    text-align: right;
+    margin-right: 50px;
+}
+
+.footer .footer-links ul {
+    display: flex;
+    list-style-type: none;
+}
+
+@media screen and (max-width: 550px) {
+    .footer .footer-links ul {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer .footer-links {
+        margin-right: 10px;
+        padding-top: 20px;
+    }
+    .footer .footer-logo {
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    .footer .footer-logo p {
+        visibility: visible;
+    }
+    .hero-title {
+        font-size: 27px;
+    }
+}
+
+.footer .footer-links li a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--black);
+    font-size: 14px;
+}
+
+.footer .footer-links li a:hover {
+    color: var(--blue);
+}
+
+.footer .copyright {
+    background-color: var(--yellow);
+}
+
+/**
+Login page
+**/
+
+.login-page .login-img-cont {
+    height: 100vh;
+    background-image: url(/assets/images/hero.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.login-page .login-img-cont::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(
+        45deg,
+        var(--yellow),
+        var(--blue),
+        var(--black)
+    );
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+}
+
+.login-page .login-form {
+    position: relative;
+    height: 100vh;
+    background-color: var(--white);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-page .login-form .title {
+    text-align: center;
+    color: #003857;
+    margin-top: 47px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 767px) {
+    .login-page .login-form {
+        height: 600px;
+    }
+    .login-page .login-img-cont {
+        height: 50vh;
+    }
+    .login-page .right-container .description i {
+        transform: rotate(-90deg);
+    }
+}
+
+.login-page .login-form input:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0px 0px 8px 1px #2196f3a3;
+}
+
+.login-page .login-form .login-btn {
+    width: 200px;
+    background-color: transparent;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    color: var(--blue);
+}
+
+.login-page .login-form .user-tybe {
+    gap: 7px;
+    margin: 30px 0;
+}
+
+.login-page .login-form .user-tybe button {
+    width: 200px;
+    color: var(--white);
+}
+
+.login-page .login-form .user-tybe button.btn-active {
+    background-color: #212529ad;
+    border: none;
+}
+
+.login-page .login-form .user-tybe button:focus {
+    box-shadow: none;
+}
+
+.login-page .right-container {
+    position: relative;
+}
+
+.login-page .right-container .description {
+    position: absolute;
+    top: 35%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    color: var(--white);
+    white-space: nowrap;
+}
+
+.login-page .right-container .description i {
+    font-size: 30px;
+}
+
+.login-page .login-form .login-btn:focus {
+    box-shadow: none;
+}
+
+.login-page .login-form .login-btn::before {
+    background-color: var(--blue);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.login-page .login-form .login-btn:hover::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0%;
+    left: 0;
+    top: 0;
+}
+
+.login-page .login-form .login-btn span {
+    color: var(--white);
+}
+
+.login-page .login-form .login-btn:hover span {
+    color: var(--blue);
+    transition: 0.3s ease-in-out;
+}
+
+.login-page .login-form #teacher-form {
+    display: none;
+}
+
+/*-------------
+--------------
+dashboard
+---------------
+*/
+
+.dashboard-logo img {
+    width: 60px;
+    height: 60px;
+    margin: 10px 30px 0px 0px;
+}
+
+.dashboard-logo h2 {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.dashboard-logo h2 .title {
+    font-size: 13px;
+    color: var(--white);
+    width: fit-content;
+    text-align: center;
+    background-color: #0377fc;
+    padding: 2px 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.dashbaord {
+    position: fixed;
+    top: 78px;
+    bottom: 0;
+    width: 255px;
+    overflow: hidden;
+    z-index: 9999;
+    background: #3a3a3a;
+    font-size: 16px;
+    padding: 20px 15px;
+    color: var(--white);
+}
+
+.dashbaord::before {
+  content:"";
+  position:absolute;
+  bottom: 0;
+  bottom: 5px;
+  right: -25px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+  background-color: var(--yellow);
+}
+
+.dashbaord .user-info {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+}
+
+.dashbaord .user-info .user-name span:nth-child(2) {
+    color: #ffbe5d;
+    font-size: 11px;
+}
+
+.dashbaord .user-info .user-img img {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    background-color: #7f7f7f;
+}
+
+.dashbaord .dashbaord-links {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 2rem;
+}
+
+.dashbaord .dashbaord-links li {
+    list-style-type: none;
+    background-color: #fd6130;
+    padding: 8px 0px;
+    margin-bottom: 19px;
+    border-radius: 5px;
+    transition: .3s ease-in;
+}
+
+.dashbaord .dashbaord-links li:hover {
+    background-color: var(--white);
+}
+
+.dashbaord .dashbaord-links li:hover a, li:hover i {
+    color: var(--black);
+    transition: .3s ease-in;
+}
+
+.dashbaord .dashbaord-links li a {
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+    display: block;
+}
+
+.dashbaord .dashbaord-links li.active {
+    background-color: var(--white);
+}
+
+.dashbaord .dashbaord-links li.active a {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+/************
+**** user header
+************/
+.user-header .prof {
+    margin-left: 20px;
+    gap: 25px;
+}
+
+.user-header .prof .user-img img {
+    width: 35px;
+    border: 1.6px solid;
+    border-radius: 50px;
+}
+
+@media screen and (min-width: 750px) {
+    .user-header .prof {
+        justify-content:center;
+    }
+}

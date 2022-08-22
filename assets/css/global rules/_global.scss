@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Epilogue", sans-serif;
+  font-weight: unset;
+}
+
+body {
+  background-color: $very-light-gray;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.theme-btn {
+  padding: 8px 25px;
+  background-image: linear-gradient(90deg, $lime-green, 50%, $bright-cyan);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  display: block;
+  width: fit-content;
+  transition: all 0.3;
+}
+
+.theme-btn:hover {
+  color: #fff;
+  opacity: 0.8;
+  animation: btn-move 1s linear infinite alternate-reverse;
+}
+
+.back-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #2dbfb4;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  text-align: center;
+  padding-top: 4px;
+  &:hover {
+    background-color: #2dbfb3ca;
+  }
+}
+
+@keyframes btn-move {
+  0% {
+    transform: translateY(-7);
+  }
+
+  0% {
+    transform: translateY(7px);
+  }
+}
+
+.fade {
+  animation: fade-in 0.3s linear;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
